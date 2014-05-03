@@ -21,6 +21,8 @@
 		E67596CF1915479500622A14 /* Shader_texture.vsh in Resources */ = {isa = PBXBuildFile; fileRef = E67596C71915479500622A14 /* Shader_texture.vsh */; };
 		E67596D11915482000622A14 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E67596D01915482000622A14 /* OpenGLES.framework */; };
 		E67596D419154AC700622A14 /* AdskObjViewerController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E67596D319154AC700622A14 /* AdskObjViewerController.mm */; };
+		E68A7BAD191571250023F572 /* Hugh_Laurie-2.png in Resources */ = {isa = PBXBuildFile; fileRef = E68A7BAB191571250023F572 /* Hugh_Laurie-2.png */; };
+		E68A7BAE191571250023F572 /* Hugh_Laurie.png in Resources */ = {isa = PBXBuildFile; fileRef = E68A7BAC191571250023F572 /* Hugh_Laurie.png */; };
 		E6910BF51914E2FB00988102 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6910BF41914E2FB00988102 /* Foundation.framework */; };
 		E6910BF71914E2FB00988102 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6910BF61914E2FB00988102 /* CoreGraphics.framework */; };
 		E6910BF91914E2FB00988102 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6910BF81914E2FB00988102 /* UIKit.framework */; };
@@ -93,6 +95,8 @@
 		E67596D219154AC700622A14 /* AdskObjViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdskObjViewerController.h; sourceTree = "<group>"; };
 		E67596D319154AC700622A14 /* AdskObjViewerController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AdskObjViewerController.mm; sourceTree = "<group>"; };
 		E68A7BAA1915608F0023F572 /* UserSettings_example.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserSettings_example.h; sourceTree = "<group>"; };
+		E68A7BAB191571250023F572 /* Hugh_Laurie-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hugh_Laurie-2.png"; sourceTree = "<group>"; };
+		E68A7BAC191571250023F572 /* Hugh_Laurie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hugh_Laurie.png; sourceTree = "<group>"; };
 		E6910BF11914E2FB00988102 /* BangaloreHack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BangaloreHack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6910BF41914E2FB00988102 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E6910BF61914E2FB00988102 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -264,6 +268,8 @@
 		E6910BFA1914E2FB00988102 /* BangaloreHack */ = {
 			isa = PBXGroup;
 			children = (
+				E68A7BAB191571250023F572 /* Hugh_Laurie-2.png */,
+				E68A7BAC191571250023F572 /* Hugh_Laurie.png */,
 				E67596BC1915479500622A14 /* ObjGL */,
 				E67596B81915472C00622A14 /* AdskReCap */,
 				E67596AE191546FC00622A14 /* AdskRESTful */,
@@ -492,6 +498,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E68A7BAD191571250023F572 /* Hugh_Laurie-2.png in Resources */,
+				E68A7BAE191571250023F572 /* Hugh_Laurie.png in Resources */,
 				E67596CC1915479500622A14 /* Shader_simple.fsh in Resources */,
 				E6910C491914EA7800988102 /* ReCap4.jpg in Resources */,
 				E6910C451914EA7800988102 /* ReCap0.jpg in Resources */,

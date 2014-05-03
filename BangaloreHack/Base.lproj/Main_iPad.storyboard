@@ -16,9 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdN-Ur-jis">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hugh_Laurie-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="zaC-dd-eyO">
+                                <rect key="frame" x="0.0" y="0.0" width="774" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdN-Ur-jis">
                                 <rect key="frame" x="71" y="145" width="138" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="1ae-w2-55n"/>
+                                </constraints>
                                 <state key="normal" title="Send">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -28,12 +35,27 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" none="YES" image="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstItem="zaC-dd-eyO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Wip-Cc-tPc"/>
+                            <constraint firstItem="zaC-dd-eyO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dPg-gv-P7L"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KdN-Ur-jis" secondAttribute="bottom" constant="832" id="ifT-hU-TFf"/>
+                            <constraint firstItem="KdN-Ur-jis" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="125" id="oHW-Nw-hmE"/>
+                            <constraint firstAttribute="bottom" secondItem="zaC-dd-eyO" secondAttribute="bottom" id="qs5-qt-kuz"/>
+                            <constraint firstAttribute="trailing" secondItem="zaC-dd-eyO" secondAttribute="trailing" constant="-6" id="toF-ax-b20"/>
+                            <constraint firstItem="KdN-Ur-jis" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="71" id="yLc-yX-Rn3"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="Hugh_Laurie-2.png" width="725" height="677"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
