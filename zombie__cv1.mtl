@@ -1,0 +1,54 @@
+# 
+# Wavefront material file
+# Created with Kaydara FBX
+# 
+
+newmtl mat_zombieSkin
+map_Kd Zombie_Diffuse.png
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+illum 1
+Tr 1.000000
+
+newmtl mat_l_eye
+map_Kd Zombie_Eye_Diffuse.png
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+illum 1
+Tr 1.000000
+
+newmtl Zombie_Hair:mat_hair
+Ka 0.000000 0.000000 0.000000
+Kd 0.109804 0.101192 0.101192
+illum 1
+Tr 1.000000
+
+newmtl zombie_teeth:mat_zombieBrain
+Ka 0.000000 0.000000 0.000000
+Kd 0.552523 0.400385 0.400385
+illum 1
+Tr 1.000000
+
+newmtl zombie_teeth:mat_zombieTeeth
+Ka 0.000000 0.000000 0.000000
+Kd 0.624000 0.624000 0.624000
+illum 1
+Tr 1.000000
+
+newmtl lambert2
+Ka 0.000000 0.000000 0.000000
+Kd 0.400000 0.400000 0.400000
+illum 1
+Tr 1.000000
+
+newmtl mat_penBlack
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+illum 1
+Tr 1.000000
+
+newmtl mat_penRed
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.000000 0.000000
+illum 1
+Tr 1.000000
