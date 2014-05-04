@@ -20,19 +20,45 @@
                                 <rect key="frame" x="0.0" y="0.0" width="774" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdN-Ur-jis">
-                                <rect key="frame" x="71" y="145" width="138" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20c-d4-zcE">
+                                <rect key="frame" x="60" y="60" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="138" id="1ae-w2-55n"/>
-                                </constraints>
-                                <state key="normal" title="Send">
+                                <state key="normal" image="logout-icon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginoutClick:" destination="BYZ-38-t0r" eventType="touchDown" id="fjC-Wq-rdC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuB-zS-7KR">
+                                <rect key="frame" x="60" y="200" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="camera-icon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdN-Ur-jis">
+                                <rect key="frame" x="60" y="340" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="recap-icon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="startReCapClick:" destination="BYZ-38-t0r" eventType="touchDown" id="n7h-Zo-dGZ"/>
                                 </connections>
                             </button>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kw0-79-lRx">
+                                <rect key="frame" x="212" y="60" width="426" height="914"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rh2-IK-19E">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <accessibility key="accessibilityConfiguration">
@@ -41,13 +67,14 @@
                         <constraints>
                             <constraint firstItem="zaC-dd-eyO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Wip-Cc-tPc"/>
                             <constraint firstItem="zaC-dd-eyO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dPg-gv-P7L"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KdN-Ur-jis" secondAttribute="bottom" constant="832" id="ifT-hU-TFf"/>
-                            <constraint firstItem="KdN-Ur-jis" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="125" id="oHW-Nw-hmE"/>
                             <constraint firstAttribute="bottom" secondItem="zaC-dd-eyO" secondAttribute="bottom" id="qs5-qt-kuz"/>
                             <constraint firstAttribute="trailing" secondItem="zaC-dd-eyO" secondAttribute="trailing" constant="-6" id="toF-ax-b20"/>
-                            <constraint firstItem="KdN-Ur-jis" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="71" id="yLc-yX-Rn3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginout" destination="20c-d4-zcE" id="ChX-bi-ISM"/>
+                        <outlet property="startReCap" destination="KdN-Ur-jis" id="w5p-I9-NLd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,6 +82,9 @@
     </scenes>
     <resources>
         <image name="Hugh_Laurie-2.png" width="725" height="677"/>
+        <image name="camera-icon.png" width="256" height="256"/>
+        <image name="logout-icon.png" width="256" height="256"/>
+        <image name="recap-icon.png" width="256" height="256"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

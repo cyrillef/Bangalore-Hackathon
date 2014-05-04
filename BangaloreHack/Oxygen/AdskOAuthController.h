@@ -1,6 +1,5 @@
 //
 //  AdskViewController.h
-//  ReCap
 //
 //  Created by Cyrille Fauvel on 10/15/13.
 //  Copyright (c) 2013 Autodesk. All rights reserved.
@@ -16,5 +15,6 @@
 - (BOOL)RequestToken ;
 - (void)Authorize ;
 - (BOOL)AccessToken:(BOOL)refresh PIN:(NSString *)PIN ;
+- (void)InvalidateToken ;
 
 @end

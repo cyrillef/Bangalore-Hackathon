@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate> // : NSObject <NSApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+//@property (assign, nonatomic) IBOutlet NSTextField *blockLabel ;
+//@property (assign, nonatomic) IBOutlet NSTextField *notificationLabel ;
 
 @end

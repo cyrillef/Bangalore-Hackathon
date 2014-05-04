@@ -32,6 +32,9 @@
 	dispatch_release (_recapSemaphore) ;
 	[super dealloc] ;
 }*/
+- (void)dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self] ;
+}
 
 - (void)viewDidLoad {
 	_recapQueue =dispatch_queue_create ("com.autodesk.recap", 0) ;
@@ -42,12 +45,13 @@
 	// Do any additional setup after loading the view, typically from a nib.
 	
 	_oaController =[[AdskOAuthController alloc] initWithNibName:nil bundle:nil] ;
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(connectionStatusChanged:) name:@"A360ConnectionStatusChanged" object:nil] ;
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated] ;
-	if ( ![_oaController AccessToken:YES PIN:nil] )
-		[self presentViewController:_oaController animated:YES completion:nil] ;
+	[self testInternetConnection] ;
 }
 
 - (void)viewInitializations {
@@ -55,6 +59,8 @@
 	_blueButton =[UIImage imageNamed:@"button-blue.png"] ;
 	_redButton =[UIImage imageNamed:@"button-red.png"] ;
 	_greenButton =[UIImage imageNamed:@"button-green.png"] ;
+	_loginImg =[UIImage imageNamed:@"login-icon.png"] ;
+	_logoutImg =[UIImage imageNamed:@"logout-icon.png"] ;
 	
 	_progressBar =[UIButton buttonWithType:UIButtonTypeRoundedRect] ;
 	_progressBar.frame =CGRectMake (0, 0, 320, 35) ;
@@ -64,10 +70,90 @@
 	[_progressBar setBackgroundImage:_blackButton forState:UIControlStateNormal] ;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning] ;
     // Dispose of any resources that can be recreated.
+}
+
+- (void)networkStatusChanged:(NSNotification *)note {
+    Reachability *reach =[note object] ;
+	self.loginout.enabled =YES ;
+    if ( [reach isReachable] )
+		[self tryToConnectToA360] ;
+    else
+		[self connectionFailed] ;
+}
+
+- (void)testInternetConnection {
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkStatusChanged:) name:kReachabilityChangedNotification object:nil] ;
+
+    _internetReachable =[Reachability reachabilityWithHostname:@"www.google.com"] ;
+    // Internet is reachable
+    _internetReachable.reachableBlock =^(Reachability* reach) {
+        // Update the UI on the main thread
+        dispatch_async (dispatch_get_main_queue (), ^{
+            NSLog(@"Yayyy, we have the interwebs!") ;
+        }) ;
+    } ;
+    // Internet is not reachable
+    _internetReachable.unreachableBlock =^(Reachability* reach) {
+        // Update the UI on the main thread
+        dispatch_async (dispatch_get_main_queue (), ^{
+            NSLog(@"Someone broke the internet :(") ;
+        }) ;
+    } ;
+    [_internetReachable startNotifier] ;
+}
+
+- (void)connectionSuccessful {
+	_isConnectedToA360 =YES ;
+	[self.loginout setImage:_loginImg forState:UIControlStateNormal] ;
+	self.startReCap.enabled =YES ;
+}
+
+- (void)connectionFailed {
+	_isConnectedToA360 =NO ;
+	[self.loginout setImage:_logoutImg forState:UIControlStateNormal] ;
+	self.startReCap.enabled =NO ;
+}
+
+- (void)connectionStatusChanged:(NSNotification *)note {
+	NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults] ;
+	if ( [defaults objectForKey:@"oauth_token"] || ![[defaults stringForKey:@"oauth_token"]  isEqual: @""] ) {
+		dispatch_async (dispatch_get_main_queue (), ^{
+			[self connectionSuccessful] ;
+		}) ;
+	} else {
+		dispatch_async (dispatch_get_main_queue (), ^{
+			[self connectionFailed] ;
+		}) ;
+	}
+}
+
+- (void)tryToConnectToA360 {
+	if ( ![_oaController AccessToken:YES PIN:nil] ) {
+		[self presentViewController:_oaController animated:YES completion:^() {
+		}] ;
+	} else
+		[self connectionFailed] ;
+}
+
+- (void)tryToDisconnectFromA360 {
+	[_oaController InvalidateToken] ;
+	[self connectionFailed] ;
+}
+
+- (IBAction)loginoutClick:(id)sender {
+	if ( [_internetReachable isReachable] == NO ) {
+		[self testInternetConnection] ;
+		return ;
+	}
+	
+	if ( _isConnectedToA360 == NO )
+		[self tryToConnectToA360] ;
+	else
+		[self tryToDisconnectFromA360] ;
+	
 }
 
 - (IBAction)startReCapClick:(id)sender {
@@ -83,6 +169,8 @@
 // For DEBUG only
 - (void)getMyPhotoSceneNow {
 	_photosceneid =@"PPKlq6vTPcLTK5R1ehPZYc5qSU4" ; // snail
+	_photosceneid =@"2vFFLFLtTeZyqdHaUd49gbHACMQ" ; // Viru
+	
 													//_photosceneid =@"EG8WAPuP7KWqjZVZ5B5cvaePjaY" ; // calc
 													//_photosceneid =@"yP4LwlQRRxwhFP5e16q6HVf0R8I" ; // dog
 													//_photosceneid =@"a7Wvr9zpUP008D7iJchtVjOzJTg" ; // mouse (with error)

@@ -1,6 +1,5 @@
 //
 //  AdskViewController.m
-//  ReCap
 //
 //  Created by Cyrille Fauvel on 10/15/13.
 //  Copyright (c) 2013 Autodesk. All rights reserved.
@@ -159,6 +158,8 @@ NSString *photosceneid ;
 		[defaults synchronize] ;
 		NSLog(@"Data saved") ;
 		
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"A360ConnectionStatusChanged" object:self] ;
+		[self dismissViewControllerAnimated:YES completion:nil] ;
 		return (YES) ;
 	} else {
 		//self.RefreshButton.enabled =NO ;
@@ -167,6 +168,16 @@ NSString *photosceneid ;
 			[self showErrorMessage:@"Failure!<br />Could not refresh token!"] ;
 		else
 			[self showErrorMessage:@"Failure!<br />Could not get access token!"] ;
+		
+		NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults] ;
+		[defaults setObject:@"" forKey:@"oauth_token"] ;
+		[defaults setObject:@"" forKey:@"oauth_token_secret"] ;
+		[defaults setObject:@"" forKey:@"oauth_session_handle"] ;
+		[defaults synchronize] ;
+		NSLog(@"Data cleared") ;
+
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"A360ConnectionStatusChanged" object:self] ;
+		[self dismissViewControllerAnimated:YES completion:nil] ;
 		return (NO) ;
 	}
 	return (YES) ;

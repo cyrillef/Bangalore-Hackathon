@@ -23,6 +23,12 @@
 		E67596D419154AC700622A14 /* AdskObjViewerController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E67596D319154AC700622A14 /* AdskObjViewerController.mm */; };
 		E68A7BAD191571250023F572 /* Hugh_Laurie-2.png in Resources */ = {isa = PBXBuildFile; fileRef = E68A7BAB191571250023F572 /* Hugh_Laurie-2.png */; };
 		E68A7BAE191571250023F572 /* Hugh_Laurie.png in Resources */ = {isa = PBXBuildFile; fileRef = E68A7BAC191571250023F572 /* Hugh_Laurie.png */; };
+		E68A7BB21915D0CF0023F572 /* camera-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E68A7BB11915D0CF0023F572 /* camera-icon.png */; };
+		E68A7BB41915D3CD0023F572 /* recap-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E68A7BB31915D3CD0023F572 /* recap-icon.png */; };
+		E68A7BB61915DF560023F572 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68A7BB51915DF560023F572 /* SystemConfiguration.framework */; };
+		E68A7BB91915E0810023F572 /* Reachability.mm in Sources */ = {isa = PBXBuildFile; fileRef = E68A7BB81915E0810023F572 /* Reachability.mm */; };
+		E68A7BBC1915E53A0023F572 /* login-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E68A7BBA1915E53A0023F572 /* login-icon.png */; };
+		E68A7BBD1915E53A0023F572 /* logout-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E68A7BBB1915E53A0023F572 /* logout-icon.png */; };
 		E6910BF51914E2FB00988102 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6910BF41914E2FB00988102 /* Foundation.framework */; };
 		E6910BF71914E2FB00988102 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6910BF61914E2FB00988102 /* CoreGraphics.framework */; };
 		E6910BF91914E2FB00988102 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6910BF81914E2FB00988102 /* UIKit.framework */; };
@@ -97,6 +103,15 @@
 		E68A7BAA1915608F0023F572 /* UserSettings_example.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserSettings_example.h; sourceTree = "<group>"; };
 		E68A7BAB191571250023F572 /* Hugh_Laurie-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hugh_Laurie-2.png"; sourceTree = "<group>"; };
 		E68A7BAC191571250023F572 /* Hugh_Laurie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hugh_Laurie.png; sourceTree = "<group>"; };
+		E68A7BAF1915CA020023F572 /* GIFSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIFSupport.h; sourceTree = "<group>"; };
+		E68A7BB01915CA7D0023F572 /* GIFSupport.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GIFSupport.mm; sourceTree = "<group>"; };
+		E68A7BB11915D0CF0023F572 /* camera-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-icon.png"; sourceTree = "<group>"; };
+		E68A7BB31915D3CD0023F572 /* recap-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recap-icon.png"; sourceTree = "<group>"; };
+		E68A7BB51915DF560023F572 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E68A7BB71915E0810023F572 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		E68A7BB81915E0810023F572 /* Reachability.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Reachability.mm; sourceTree = "<group>"; };
+		E68A7BBA1915E53A0023F572 /* login-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-icon.png"; sourceTree = "<group>"; };
+		E68A7BBB1915E53A0023F572 /* logout-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-icon.png"; sourceTree = "<group>"; };
 		E6910BF11914E2FB00988102 /* BangaloreHack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BangaloreHack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6910BF41914E2FB00988102 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E6910BF61914E2FB00988102 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -161,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E68A7BB61915DF560023F572 /* SystemConfiguration.framework in Frameworks */,
 				E67596D11915482000622A14 /* OpenGLES.framework in Frameworks */,
 				E6EEAF051915140000900C72 /* libz.dylib in Frameworks */,
 				E6910C561914FC8E00988102 /* libxml2.2.dylib in Frameworks */,
@@ -254,6 +270,7 @@
 		E6910BF31914E2FB00988102 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E68A7BB51915DF560023F572 /* SystemConfiguration.framework */,
 				E67596D01915482000622A14 /* OpenGLES.framework */,
 				E6EEAF041915140000900C72 /* libz.dylib */,
 				E6910C551914FC8E00988102 /* libxml2.2.dylib */,
@@ -268,8 +285,6 @@
 		E6910BFA1914E2FB00988102 /* BangaloreHack */ = {
 			isa = PBXGroup;
 			children = (
-				E68A7BAB191571250023F572 /* Hugh_Laurie-2.png */,
-				E68A7BAC191571250023F572 /* Hugh_Laurie.png */,
 				E67596BC1915479500622A14 /* ObjGL */,
 				E67596B81915472C00622A14 /* AdskReCap */,
 				E67596AE191546FC00622A14 /* AdskRESTful */,
@@ -288,6 +303,10 @@
 				E6910C0D1914E2FB00988102 /* ViewController.mm */,
 				E6910C0F1914E2FB00988102 /* Images.xcassets */,
 				E6910BFB1914E2FB00988102 /* Supporting Files */,
+				E68A7BAF1915CA020023F572 /* GIFSupport.h */,
+				E68A7BB01915CA7D0023F572 /* GIFSupport.mm */,
+				E68A7BB71915E0810023F572 /* Reachability.h */,
+				E68A7BB81915E0810023F572 /* Reachability.mm */,
 			);
 			path = BangaloreHack;
 			sourceTree = "<group>";
@@ -379,6 +398,12 @@
 		E6EEAEE9191511D800900C72 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E68A7BBA1915E53A0023F572 /* login-icon.png */,
+				E68A7BBB1915E53A0023F572 /* logout-icon.png */,
+				E68A7BB31915D3CD0023F572 /* recap-icon.png */,
+				E68A7BB11915D0CF0023F572 /* camera-icon.png */,
+				E68A7BAB191571250023F572 /* Hugh_Laurie-2.png */,
+				E68A7BAC191571250023F572 /* Hugh_Laurie.png */,
 				E6EEAEEA191511E600900C72 /* button-black.png */,
 				E6EEAEEB191511E600900C72 /* button-blue.png */,
 				E6EEAEEC191511E600900C72 /* button-green.png */,
@@ -498,15 +523,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E68A7BBC1915E53A0023F572 /* login-icon.png in Resources */,
 				E68A7BAD191571250023F572 /* Hugh_Laurie-2.png in Resources */,
 				E68A7BAE191571250023F572 /* Hugh_Laurie.png in Resources */,
 				E67596CC1915479500622A14 /* Shader_simple.fsh in Resources */,
 				E6910C491914EA7800988102 /* ReCap4.jpg in Resources */,
 				E6910C451914EA7800988102 /* ReCap0.jpg in Resources */,
 				E6910C0B1914E2FB00988102 /* Main_iPad.storyboard in Resources */,
+				E68A7BB41915D3CD0023F572 /* recap-icon.png in Resources */,
+				E68A7BBD1915E53A0023F572 /* logout-icon.png in Resources */,
 				E67596CD1915479500622A14 /* Shader_simple.vsh in Resources */,
 				E6EEAEF1191511E600900C72 /* button-red.png in Resources */,
 				E6EEAEEE191511E600900C72 /* button-black.png in Resources */,
+				E68A7BB21915D0CF0023F572 /* camera-icon.png in Resources */,
 				E67596CF1915479500622A14 /* Shader_texture.vsh in Resources */,
 				E6EEAEEF191511E600900C72 /* button-blue.png in Resources */,
 				E6910C471914EA7800988102 /* ReCap2.jpg in Resources */,
@@ -551,6 +580,7 @@
 				E6910C4B1914EA7800988102 /* NSString+DDXML.m in Sources */,
 				E67596C81915479500622A14 /* AdskEAGLView.mm in Sources */,
 				E6EEAF031915128A00900C72 /* ZipArchive.mm in Sources */,
+				E68A7BB91915E0810023F572 /* Reachability.mm in Sources */,
 				E6910C4D1914EA7800988102 /* DDXMLElement.m in Sources */,
 				E67596C91915479500622A14 /* AdskObjParser.mm in Sources */,
 				E6910C4C1914EA7800988102 /* DDXMLDocument.m in Sources */,
